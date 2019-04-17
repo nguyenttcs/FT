@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>List Student</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Image</th>
+        <th scope="col">Link Profile</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%
+      arrStudent.forEach(student=>{
+      %>  
+      <tr>
+        <td><%=student.id%></td>
+        <td><%=student.name%></td>
+        <td>
+          <img src="<%=student.avatar%>" alt="#" width="150px" height="150px">
+        </td>
+        <td>
+          <a href="<%=student.link%>" target="_blank"><%=student.name%></a>
+        </td>
+        <td>
+            <button style="width:50%" class="btn btn-warning">Update</button>
+            <br><br>
+            <button  style="width:50%" class="btn btn-danger">Delete</button>
+        </td>
+      </tr>
+      <%
+        })
+      %>
+    </tbody>
+  </table>
+</body>
+
+</html>
