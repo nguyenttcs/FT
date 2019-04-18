@@ -24,4 +24,23 @@ router.post('/add-student', (req, res) => {
     res.redirect('/')
 })
 
+router.get('/update/:id', (req, res) => {
+    const { id } = req.params
+    const student = arrStudent.find(student => student.id == id)
+    !student ? res.send('Student not found!') : res.render('update', { student })
+})
+
+router.post('/update-student', (req, res) => {
+    const { txtId, txtName, txtAvatar, txtLink } = req.body
+    let student = arrStudent.find(student => student.id == txtId)
+    if (!student) {
+        res.send({ error: 'Student not found!' })
+    } else {
+        student.name = txtName
+        student.avatar = txtAvatar
+        student.link = txtLink
+        res.redirect('/')
+    }
+})
+
 module.exports = router
