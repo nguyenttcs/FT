@@ -43,4 +43,15 @@ router.post('/update-student', (req, res) => {
     }
 })
 
+router.get('/remove/:id', (req, res) => {
+    const { id } = req.params.id
+    const student_index = arrStudent.find(student => student.id == id)
+    if (student_index < 0) {
+        res.send({error:'Student not found!'})
+    } else {
+        arrStudent.splice(student_index,1)
+        res.redirect('/')
+    }
+})
+
 module.exports = router
