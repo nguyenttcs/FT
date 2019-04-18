@@ -23,9 +23,10 @@ app.get('/add',(req,res)=>{
 //yarn add body-parser
 app.post('/add-student',(req,res)=>{
     const {txtName, txtAvatar, txtLink} = req.body
-    res.send({
-        txtName, txtAvatar, txtLink
-    })
+    const id = Math.floor(Math.random()*1000)
+    const student = new Student(id,txtName,txtAvatar,txtLink)
+    arrStudent.push(student)
+    res.redirect('/')
 })
 
 const port = process.env.PORT||3000
