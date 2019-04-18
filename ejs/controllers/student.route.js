@@ -44,8 +44,8 @@ router.post('/update-student', (req, res) => {
 })
 
 router.get('/remove/:id', (req, res) => {
-    const { id } = req.params.id
-    const student_index = arrStudent.find(student => student.id == id)
+    const id = req.params.id
+    const student_index = arrStudent.findIndex(student => student.id == id)
     if (student_index < 0) {
         res.send({error:'Student not found!'})
     } else {
