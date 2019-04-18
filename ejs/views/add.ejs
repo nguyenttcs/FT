@@ -14,18 +14,18 @@
         <div class="row justify-content-center">
             <div class="col-6">
                 <h2>Add New Student</h2>
-                <form>
+                <form method="POST" action="/add-student">
                     <div class="form-group">
                         <label for="name">Name:</label>
-                        <input id="name" type="text" class="form-control" placeholder="Enter name">
+                        <input id="name" name="txtName" type="text" class="form-control" placeholder="Enter name">
                     </div>
                     <div class="form-group">
                         <label for="avatar">Avatar:</label>
-                        <input id="avatar" type="text" class="form-control" placeholder="Enter link avatar">
+                        <input id="avatar" name="txtAvatar" type="text" class="form-control" placeholder="Enter link avatar">
                     </div>
                     <div class="form-group">
                         <label for="link">Link:</label>
-                        <input id="link" type="text" class="form-control" placeholder="Enter link profile">
+                        <input id="link" name="txtLink" type="text" class="form-control" placeholder="Enter link profile">
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>

@@ -10,6 +10,8 @@
 </head>
 
 <body>
+  <h1 style="text-align:center">List Student</h1>
+  <button type="button" class="btn btn-success" style="margin:15px">Add New Student</button>
   <table class="table">
     <thead>
       <tr>
@@ -23,7 +25,7 @@
     <tbody>
       <%
       arrStudent.forEach(student=>{
-      %>  
+      %>
       <tr>
         <td><%=student.id%></td>
         <td><%=student.name%></td>
@@ -34,9 +36,9 @@
           <a href="<%=student.link%>" target="_blank"><%=student.name%></a>
         </td>
         <td>
-            <button style="width:50%" class="btn btn-warning">Update</button>
-            <br><br>
-            <button  style="width:50%" class="btn btn-danger">Delete</button>
+          <button style="width:50%" class="btn btn-warning">Update</button>
+          <br><br>
+          <button style="width:50%" class="btn btn-danger">Delete</button>
         </td>
       </tr>
       <%
